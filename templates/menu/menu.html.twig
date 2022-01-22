@@ -1,0 +1,24 @@
+<nav>
+    <ul>
+        <li>
+            <a href="{{ path('blog_index') }}">Accueil - Blog</a>
+        </li>
+
+        {% for article in articles %}
+        <li>
+            <a href="{{ path('article_show', {slug: article.slug}) }}">
+                {{ article.title }}
+            </a>
+        </li>
+        {% endfor %}
+
+        {% for category in categories %}
+        <li>
+            <a href="{{ path('category_show', {slug: category.slug}) }}">
+                {{ category.title }}
+            </a>
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
